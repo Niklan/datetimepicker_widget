@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Complementary hooks.
+ */
+
+/**
+ * Implements hook_requirement().
+ */
+function datetimepicker_requirements($phase) {
+  $requirements = [];
+
+  // @todo figure out wtf is going on here. The functions only visible after
+  // installation, after that trying to access every admin page throw the error
+  // tells this function is not found. Why is .module file not attached? Maybe
+  // core bug? So this is workaround, deal with it or help :)
+  if ($phase == 'runtime' && function_exists('_datetimepicker_check_library')) {
+    $requirements['datetimepicker']['title'] = 'DateTimePicker';
+    $library_status = _datetimepicker_check_library();
+
+    if ($library_status['js'] && $library_status['css']) {
+      $requirements['datetimepicker']['value'] = t('Library is found');
+      $requirements['datetimepicker']['severity'] = REQUIREMENT_OK;
+    }
+    elseif ($library_status['js'] && !$library_status['css']) {
+      $requirements['datetimepicker']['value'] = t('DateTimePicker stylesheet is not found');
+      $requirements['datetimepicker']['severity'] = REQUIREMENT_ERROR;
+      $requirements['datetimepicker']['description'] = t('You must add stylesheet to library folder.');
+    }
+    elseif (!$library_status['js'] && $library_status['css']) {
+      $requirements['datetimepicker']['value'] = t('DateTimePicker JS is not found');
+      $requirements['datetimepicker']['severity'] = REQUIREMENT_ERROR;
+      $requirements['datetimepicker']['description'] = t('You must add JS to library folder.');
+    }
+    elseif (!$library_status['js'] && !$library_status['css']) {
+      $requirements['datetimepicker']['value'] = t('Not installed');
+      $requirements['datetimepicker']['severity'] = REQUIREMENT_ERROR;
+      $requirements['datetimepicker']['description'] = t('Follow the instructions to add library.');
+    }
+  }
+  return $requirements;
+}

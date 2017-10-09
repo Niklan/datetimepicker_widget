@@ -1,0 +1,153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-10-09 14:09+0500\n"
+"PO-Revision-Date: 2017-10-09 14:17+0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: t\n"
+"X-Poedit-SearchPath-0: assets/js/datetimepicker.widget.js\n"
+"X-Poedit-SearchPath-1: datetimepicker.install\n"
+"X-Poedit-SearchPath-2: .\n"
+
+#: assets/js/datetimepicker.widget.js:25
+msgctxt "Full month name in the singular"
+msgid "January"
+msgstr "Январь"
+
+#: assets/js/datetimepicker.widget.js:26
+msgctxt "Full month name in the singular"
+msgid "February"
+msgstr "Февраль"
+
+#: assets/js/datetimepicker.widget.js:27
+msgctxt "Full month name in the singular"
+msgid "March"
+msgstr "Март"
+
+#: assets/js/datetimepicker.widget.js:28
+msgctxt "Full month name in the singular"
+msgid "April"
+msgstr "Апрель"
+
+#: assets/js/datetimepicker.widget.js:29
+msgctxt "Full month name in the singular"
+msgid "May"
+msgstr "Май"
+
+#: assets/js/datetimepicker.widget.js:30
+msgctxt "Full month name in the singular"
+msgid "June"
+msgstr "Июнь"
+
+#: assets/js/datetimepicker.widget.js:31
+msgctxt "Full month name in the singular"
+msgid "July"
+msgstr "Июль"
+
+#: assets/js/datetimepicker.widget.js:32
+msgctxt "Full month name in the singular"
+msgid "August"
+msgstr "Август"
+
+#: assets/js/datetimepicker.widget.js:33
+msgctxt "Full month name in the singular"
+msgid "September"
+msgstr "Сентябрь"
+
+#: assets/js/datetimepicker.widget.js:34
+msgctxt "Full month name in the singular"
+msgid "October"
+msgstr "Октябрь"
+
+#: assets/js/datetimepicker.widget.js:35
+msgctxt "Full month name in the singular"
+msgid "November"
+msgstr "Ноябрь"
+
+#: assets/js/datetimepicker.widget.js:36
+msgctxt "Full month name in the singular"
+msgid "December"
+msgstr "Декабрь"
+
+#: assets/js/datetimepicker.widget.js:41
+msgid "Mon"
+msgstr "Пн"
+
+#: assets/js/datetimepicker.widget.js:42
+msgid "Tue"
+msgstr "Вт"
+
+#: assets/js/datetimepicker.widget.js:43
+msgid "Wed"
+msgstr "Ср"
+
+#: assets/js/datetimepicker.widget.js:44
+msgid "Thu"
+msgstr "Чт"
+
+#: assets/js/datetimepicker.widget.js:45
+msgid "Fri"
+msgstr "Пт"
+
+#: assets/js/datetimepicker.widget.js:46
+msgid "Sat"
+msgstr "Сб"
+
+#: assets/js/datetimepicker.widget.js:47
+msgid "Sun"
+msgstr "Вс"
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:99
+msgid "Format"
+msgstr "Формат"
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:106
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:142
+msgid "Inline"
+msgstr "В линию"
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:107
+msgid "If selected, widget will be showed inline and replace input field."
+msgstr "Если выбрано, вместо поля ввода будет сразу показан виджет."
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:113
+msgid "Allowed times"
+msgstr "Разрешенное время"
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:114
+msgid ""
+"Allowed times to select. F.e. 12:00, 13:00. Split multiple values by comma. "
+"If not set, all times will be allowed."
+msgstr ""
+"Разрешенное время на выбор. Например, 12:00, 13:00. Несколько значений "
+"разделяются запятой. Если не указано, все часы будут доступны."
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:120
+msgid "Mask"
+msgstr "Маска"
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:121
+msgid ""
+"Enable mask support for field. Leave it empty to leave disabled, enter "
+"'auto' to enable automatically mask, or enter exact mask which you want."
+msgstr ""
+"Включает поддержку маски для поля. Оставьте пустым если хотите оставить "
+"отключенным, напишите auto для автоматического применения маски, или "
+"введите маску которую хотите."
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:135
+msgid "Format: @format"
+msgstr "Формат: @format"
+
+#: src/Plugin/Field/FieldWidget/DateTimePickerWidget.php:138
+msgid "Mask: @mask"
+msgstr "Маска: @mask"

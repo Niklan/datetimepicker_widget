@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Main file for hooks and custom functions.
+ */
+
+/**
+ * Check is jQuery library is exists.
+ */
+function _datetimepicker_check_library() {
+  $library = \Drupal::service('library.discovery')->getLibraryByName('datetimepicker', 'datetimepicker');
+  $is_js_exists = file_exists($library['js'][0]['data']) ? TRUE : FALSE;
+  $is_css_exists = file_exists($library['css'][0]['data']) ? TRUE : FALSE;
+  return [
+    'js' => $is_js_exists,
+    'css' => $is_css_exists,
+  ];
+}

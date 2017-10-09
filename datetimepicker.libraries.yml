@@ -1,0 +1,24 @@
+datetimepicker:
+  version: VERSION
+  js:
+    /libraries/datetimepicker/build/jquery.datetimepicker.full.min.js: { minified: true }
+  css:
+    base:
+      /libraries/datetimepicker/build/jquery.datetimepicker.min.css: { minified: true }
+  remote: https://github.com/xdan/datetimepicker
+  license:
+    name: MIT
+    url: https://en.wikipedia.org/wiki/MIT_License
+    gpl-compatible: true
+  dependencies:
+    - core/jquery
+
+datetimepicker.widget:
+  version: VERSION
+  js:
+    assets/js/datetimepicker.widget.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - datetimepicker/datetimepicker

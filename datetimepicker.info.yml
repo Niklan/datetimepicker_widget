@@ -1,0 +1,11 @@
+name: DateTimePicker
+description: Widget for datetime field integrated with DateTimePicker jQuery plugin.
+type: module
+version: 1.x
+core: 8.x
+dependencies:
+ - datetime
+
+# Add translation support for custom module.
+'interface translation project': datetimepicker
+'interface translation server pattern': modules/custom/datetimepicker/translations/%language.po
