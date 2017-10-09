@@ -15,7 +15,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-KeywordsList: t\n"
 "X-Poedit-SearchPath-0: assets/js/datetimepicker.widget.js\n"
-"X-Poedit-SearchPath-1: datetimepicker.install\n"
+"X-Poedit-SearchPath-1: datetimepicker_widget.install\n"
 "X-Poedit-SearchPath-2: .\n"
 
 #: assets/js/datetimepicker.widget.js:25

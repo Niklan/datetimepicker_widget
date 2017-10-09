@@ -21,4 +21,4 @@ datetimepicker.widget:
     - core/drupal
     - core/drupalSettings
     - core/jquery.once
-    - datetimepicker/datetimepicker
+    - datetimepicker_widget/datetimepicker

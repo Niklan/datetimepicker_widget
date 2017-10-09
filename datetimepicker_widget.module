@@ -8,8 +8,8 @@
 /**
  * Check is jQuery library is exists.
  */
-function _datetimepicker_check_library() {
-  $library = \Drupal::service('library.discovery')->getLibraryByName('datetimepicker', 'datetimepicker');
+function _datetimepicker_widget_check_library() {
+  $library = \Drupal::service('library.discovery')->getLibraryByName('datetimepicker_widget', 'datetimepicker');
   $is_js_exists = file_exists($library['js'][0]['data']) ? TRUE : FALSE;
   $is_css_exists = file_exists($library['css'][0]['data']) ? TRUE : FALSE;
   return [

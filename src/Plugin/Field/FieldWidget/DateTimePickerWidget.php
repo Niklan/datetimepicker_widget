@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\datetimepicker\Plugin\Field\FieldWidget;
+namespace Drupal\datetimepicker_widget\Plugin\Field\FieldWidget;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -10,8 +10,8 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * @FieldWidget(
- *   id = "datetimepicker",
- *   module = "datetimepicker",
+ *   id = "datetimepicker_widget",
+ *   module = "datetimepicker_widget",
  *   label = @Translation("DateTimePicker"),
  *   field_types = {
  *     "datetime"
@@ -70,7 +70,7 @@ class DateTimePickerWidget extends WidgetBase {
       ],
     ];
 
-    $element['#attached']['library'][] = 'datetimepicker/datetimepicker.widget';
+    $element['#attached']['library'][] = 'datetimepicker_widget/datetimepicker.widget';
     return ['value' => $element];
   }
 
