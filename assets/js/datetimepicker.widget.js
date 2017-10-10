@@ -15,7 +15,7 @@
           // Months localizations.
           let monthsOptions = {};
           monthsOptions.context = 'Full month name in the singular';
-          
+  
           let months = [
             Drupal.t('January', {}, monthsOptions),
             Drupal.t('February', {}, monthsOptions),
@@ -41,7 +41,7 @@
             Drupal.t('Sat'),
             Drupal.t('Sun'),
           ];
-          
+  
           $datetimepicker.each(function (i, element) {
             let $element = $(element);
             let elementSettings = $element.data('datetimepicker-settings');
@@ -56,6 +56,13 @@
                 dayOfWeek: dayOfWeek,
               }
             };
+  
+            // Use "alter" system for allow other JS's change the settings.
+            $.each(Drupal.behaviors, function(i, behavior) {
+              if (typeof behavior.dateTimePickerWidget === 'function') {
+                elementSettings = behavior.dateTimePickerWidget(elementSettings, element);
+              }
+            });
   
             $(element).datetimepicker(elementSettings);
           });
