@@ -43,8 +43,7 @@
           ];
   
           $datetimepicker.each(function (i, element) {
-            let $element = $(element);
-            let elementSettings = $element.data('datetimepicker-settings');
+            let elementSettings = $(element).data('datetimepicker-settings');
             elementSettings.dayOfWeekStart = 1;
             // Add current language.
             elementSettings.lang = settings.path.currentLanguage;
