@@ -1,5 +1,7 @@
 # DateTimePicker Drupal field widget
 
+[Documentation](docs/README.md)
+
 This module provide new widget type `DateTimePicker` for datetime field type.
 The widget use [DateTimePicker jQuery plugin](https://github.com/xdan/datetimepicker) and allow you to configure it on admin page.
 
@@ -15,23 +17,6 @@ Currently it's has limits:
 2. Download jQuery plugin from [link](https://github.com/xdan/datetimepicker/releases).
 3. Extract jQuery archive to /libraries/datetimepicker so js file must be accessed at /libraries/datetimepicker/build/jquery.datetimepicker.full.min.js. And don't forget about stylesheet.
 4. Use it!
-
-## JS hook system
-
-The admin configurations is limited for many reasons, maybe it will extended in the future, but anyway, it can't let you get control over all plugin functionality. So thery obvious, we can't let write JS callbacks in admin settings, this is madness. For this and other cases is created "hook" system based on behaviours.
-
-This approach let you fully control options for each individual datetimepicker instance on the page. Only thing you need to do, it's create your own JS file, define it as Drupal library using .libraries.yml file and attach on pages where you need this.
-
-To hook you need to write special behavior:
-
-```js
-Drupal.behaviors.myBehaviour.dateTimePickerWidget = function(options, element) {
-  return options;
-};
-```
-This behavior must return modified or completely new options object.
-
-For examples see [datetimepicker-alter.example.js](assets/js/datetimepicker-alter.example.js) file.
 
 ## Some screenshots
 
