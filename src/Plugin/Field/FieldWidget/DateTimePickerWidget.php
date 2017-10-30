@@ -55,8 +55,11 @@ class DateTimePickerWidget extends WidgetBase {
     // Convert all settings array keys to camelCase.
     foreach ($settings as $key => $value) {
       $new_key = lcfirst(implode('', array_map('ucfirst', explode('_', $key))));
-      $settings[$new_key] = $value;
-      unset($settings[$key]);
+      // If new key is the same, we do nothing.
+      if ($new_key !== $key) {
+        $settings[$new_key] = $value;
+        unset($settings[$key]);
+      }
     }
 
     $element += [
