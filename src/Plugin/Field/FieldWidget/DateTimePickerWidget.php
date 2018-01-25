@@ -42,9 +42,10 @@ class DateTimePickerWidget extends WidgetBase {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $default_value = isset($items[$delta]->value) ? $items[$delta]->value : '';
+    $default_value = $items[$delta]->isEmpty() ? $items[$delta]->date->getTimestamp() : \Drupal::service('datetime.time')
+      ->getCurrentTime();
     $default_value_corrected = \Drupal::service('date.formatter')
-      ->format(strtotime($default_value), 'custom', $this->getSetting('format'));
+      ->format($default_value, 'custom', $this->getSetting('format'));
 
     $settings = $this->getSettings();
     // Why is we doing this manual conditions below? This is all because some
