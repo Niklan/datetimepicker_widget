@@ -7,6 +7,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
 
 /**
  * @FieldWidget(
@@ -35,6 +36,7 @@ class DateTimePickerWidget extends WidgetBase {
         'max_date' => NULL,
         'min_time' => NULL,
         'max_time' => NULL,
+        'blur_on_focus' => FALSE,
       ] + parent::defaultSettings();
   }
 
@@ -48,6 +50,8 @@ class DateTimePickerWidget extends WidgetBase {
       ->format($default_value, 'custom', $this->getSetting('format'));
 
     $settings = $this->getSettings();
+    // Unset values which is not used directly by library.
+    unset($settings['blur_on_focus']);
     // Why is we doing this manual conditions below? This is all because some
     // settings must be transformed or checked properly before they will be send
     // to JS. F.e. we need transform string to array for allowTimes or check
@@ -99,15 +103,18 @@ class DateTimePickerWidget extends WidgetBase {
       }
     }
 
+    $element_attributes = new Attribute();
+    $element_attributes->addClass('datetimepicker-widget');
+    $element_attributes->setAttribute('data-datetimepicker-settings', Json::encode($settings));
+    if ($this->getSetting('blur_on_focus')) {
+     $element_attributes->setAttribute('onfocus', 'blur();');
+    }
     $element += [
       '#type' => 'textfield',
       '#default_value' => $default_value_corrected,
       '#size' => 16,
       '#maxlength' => 16,
-      '#attributes' => [
-        'class' => ['datetimepicker-widget'],
-        'data-datetimepicker-settings' => Json::encode($settings),
-      ],
+      '#attributes' => $element_attributes->toArray(),
     ];
 
     $element['#attached']['library'][] = 'datetimepicker_widget/datetimepicker.widget';
@@ -140,6 +147,13 @@ class DateTimePickerWidget extends WidgetBase {
         ]),
         '#prefix' => '<p>',
         '#suffix' => '</p>',
+      ];
+
+      $element['blur_on_focus'] = [
+        '#type' => 'checkbox',
+        '#title' => $this->t('Blur on focus'),
+        '#description' => $this->t("Prevent input to be focused. Useful if you don't won't allow to input value manually and prevent showing keyboard on mobile devices."),
+        '#default_value' => $this->getSetting('blur_on_focus'),
       ];
 
       $element['format'] = [
